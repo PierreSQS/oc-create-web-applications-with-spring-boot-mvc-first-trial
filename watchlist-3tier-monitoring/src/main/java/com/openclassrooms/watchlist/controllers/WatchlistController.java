@@ -52,21 +52,21 @@ public class WatchlistController {
 		
 // TODO Also works but ???????
 //		WatchlistItem watchlistItem = watchlistServ.updateItemForWatchlistForm(id);
-		WatchlistItem watchlistItem = watchlistServ.findWatchlistItemById(id);
-
-		if (watchlistItem == null) {
-			model.put("watchlistItem", new WatchlistItem());
-		} else {
-			model.put("watchlistItem", watchlistItem);
-		}
-		return new ModelAndView(viewName, model);		
+//		WatchlistItem watchlistItem = watchlistServ.findWatchlistItemById(id);
+//
+//		if (watchlistItem == null) {
+//			model.put("watchlistItem", new WatchlistItem());
+//		} else {
+//			model.put("watchlistItem", watchlistItem);
+//		}
+//		return new ModelAndView(viewName, model);		
 
 // THIS PART IS CRITICAL FOR THE UNIT TESTS BUT WORKS WITH THE APPLICATION!!!!!!!!		
-//		WatchlistItem watchlistItem = watchlistServ.updateItemForWatchlistForm(id);
-//
-//		model.put("watchlistItem", watchlistItem);
-//
-//		return new ModelAndView(viewName, model);
+		WatchlistItem watchlistItem = watchlistServ.updateItemForWatchlistForm(id);
+
+		model.put("watchlistItem", watchlistItem);
+
+		return new ModelAndView(viewName, model);
 	}
 
 	@PostMapping("/watchlistItemForm")
