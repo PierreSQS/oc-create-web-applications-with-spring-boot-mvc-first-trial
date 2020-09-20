@@ -1,0 +1,13 @@
+target/
+.project
+.settings
+.factorypath
+.classpath
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+#Watchlist log files
+*.log
+*.gz
+

@@ -1,0 +1,25 @@
+package com.openclassrooms.watchlist.actuator;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
+import org.springframework.stereotype.Component;
+
+import com.openclassrooms.watchlist.services.MovieRatingService;
+
+@Component
+public class HealthCheck implements HealthIndicator {
+	
+	@Autowired
+	MovieRatingService movieRatingServ;
+
+	@Override
+	public Health health() {
+		if (movieRatingServ.getMovieRating("UP").get().isEmpty()) {
+			return Health.down().withDetail("Cause", "OMDB API is not available").build();
+		};
+		
+		return Health.up().build();
+	}
+
+}
