@@ -57,7 +57,12 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 		<!-- End tags::THYMELEAF -->
-
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		
 		<!-- tags::spring-Swagger2 -->
 		<dependency>
 			<groupId>io.springfox</groupId>
